@@ -32,7 +32,7 @@
 					<h3>Send a Message</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 				</div>
-				<form [formGroup]="myGroup" >
+				<form [formGroup]="myGroup" (ngSubmit)="onSubmit(myGroup)">
 						<input type="text" class="shart" formControlName="name" placeholder="NAME">						
 					 	<input type="text" class="shart"  formControlName="email" placeholder="EMAIL">
 					 	<div *ngIf="myGroup.controls['name'].touched && !myGroup.controls['name'].valid">  
@@ -57,8 +57,8 @@
 					            </span>  
 					                       
 					    </div>
-					 	<input type="text" class="long"  placeholder="SUBJECT">
-				         <textarea  placeholder="MESSAGE"></textarea>
+					 	<input type="text" class="long" formControlName="subject"  placeholder="SUBJECT">
+				         <textarea  placeholder="MESSAGE" formControlName="message"></textarea>
                         <button type="submit" class="btn btn-info" [disabled]='!myGroup.valid'>Submit</button>
 				</form>
 				
