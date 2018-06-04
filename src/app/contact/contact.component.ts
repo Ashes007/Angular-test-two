@@ -9,7 +9,7 @@ import {FormBuilder,FormGroup,FormControl,Validators,NgForm} from '@angular/form
 export class ContactComponent implements OnInit {
 
   constructor(private frmbuilder:FormBuilder) { 
-
+    myGroup:FormGroup; 
    
     this.myGroup = frmbuilder.group({
        name:['',Validators.compose([Validators.required,Validators.maxLength(15),Validators.minLength(1)])],
