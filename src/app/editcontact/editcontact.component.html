@@ -1,0 +1,74 @@
+<!--contact start here-->
+<div class="contact w3agile">
+	<div class="container">
+		<div class="contact-main w3l-co">
+			<div class="col-md-6 contact-left">
+				<div class="contact-top">
+					<h2>Contact Info</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+			    </div>
+				<div class="conta-1 wthree-co">
+					<div class="con-phone">
+						<span class="con-ph"> </span>
+						<div class="con-para">
+							<h6>Phone</h6>
+							<p>+715 69 87 18</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="conta-2 agile-co">
+					<div class="con-address">
+						<span class="con-location"> </span>
+						<div class="con-para">
+							<h6>Address</h6>
+							<p>Latin literature from 45 BC</p>
+						</div>
+					</div>
+				</div>
+			 </div>
+			<div class="col-md-6 contact-right w3agile-co">
+				<div class="contact-top">
+					<h3>Send a Message</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+				</div>
+				<form [formGroup]="myGroup" (ngSubmit)="onSubmit(myGroup)">
+						<input type="text" class="shart" formControlName="name" placeholder="NAME" [(ngModel)] = "contactInfo.name">						
+					 	<input type="text" class="shart"  formControlName="email" placeholder="EMAIL" [(ngModel)] = "contactInfo.email">
+					 	<div *ngIf="myGroup.controls['name'].touched && !myGroup.controls['name'].valid">  
+					        <span *ngIf="myGroup.controls['name'].hasError('required') ">  
+					            Name is required  
+					            </span>  
+					            <span *ngIf="myGroup.controls['name'].hasError('minlength') ">  
+					             Min length is 1  
+					            </span>  
+					            <span *ngIf="myGroup.controls['name'].hasError('maxlength') ">  
+					            max length is 15  
+					        </span>  
+					    </div> 
+
+					    <div *ngIf="myGroup.controls['email'].touched && !myGroup.controls['email'].valid">  
+					        <span *ngIf="myGroup.controls['email'].hasError('required') ">  
+					           Email ID is needed  
+					             </span>  
+					            
+					      <span *ngIf="myGroup.controls['email'].hasError('pattern') ">  
+					           Invalid Email ID  
+					            </span>  
+					                       
+					    </div>
+					 	<input type="text" class="long" formControlName="subject"  placeholder="SUBJECT" [(ngModel)] = "contactInfo.subject">
+				         <textarea  placeholder="MESSAGE" formControlName="message" [(ngModel)] = "contactInfo.message"></textarea>
+                        <button type="submit" class="btn btn-info" [disabled]='!myGroup.valid'>Submit</button>
+                        <input type="hidden" formControlName="id" [(ngModel)] = "contactInfo._id">
+				</form>
+				
+				</div>
+		  <div class="clearfix"> </div>
+		</div>
+		<div class="map agileits-mp">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13251.379579532895!2d151.20123713732173!3d-33.867887973599956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ccc0!2sSydney+NSW+2000%2C+Australia!5e0!3m2!1sen!2sin!4v1471840520875" style="border:0" allowfullscreen=""></iframe>
+		</div>
+	</div>
+</div>
+<!--contact end here-->

@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table">
+  <thead>
+  <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let contact of contactlist">
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.subject }}</td>
+          <td>{{ contact.message }}</td>
+          <td>	<a [routerLink]="['/edit', contact._id]" class="btn btn-primary">Edit</a>
+          		<span class="btn btn-danger" (click)="deleteData(contact._id)">Delete</span>
+          </td>
+      </tr>
+  </tbody>
+</table>
+</div>

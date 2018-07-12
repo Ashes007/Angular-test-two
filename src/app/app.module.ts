@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -17,6 +18,10 @@ import { HomeLayoutComponent } from './home-layout/home-layout.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { ContactService } from './contact.service';
+import { ContactlistComponent } from './contactlist/contactlist.component';
+import { EditcontactComponent } from './editcontact/editcontact.component';
+
 
 @NgModule({
   declarations: [
@@ -30,15 +35,18 @@ import { ContactComponent } from './contact/contact.component';
     InnterLayoutComponent,
     HomeLayoutComponent,
     GalleryComponent,
-    ContactComponent
+    ContactComponent,
+    ContactlistComponent,
+    EditcontactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -90,7 +90,7 @@ div#navbar {
 ul.nav.navbar-nav li a {
     font-size: 1.05em;
     color: #a0431a;
-	padding: 20px 67px;
+	padding: 20px 35px;
 }
 .nav > li > a:hover, .nav > li > a:focus {
     background-color:#A0431B;

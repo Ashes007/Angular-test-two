@@ -5,6 +5,9 @@ import {AboutComponent} from './about/about.component';
 import {ServicesComponent} from './services/services.component';
 import {GalleryComponent} from './gallery/gallery.component';
 import {ContactComponent} from './contact/contact.component';
+import {ContactlistComponent} from './contactlist/contactlist.component';
+import { EditcontactComponent } from './editcontact/editcontact.component';
+
 
 import {InnterLayoutComponent} from './innter-layout/innter-layout.component';
 import {HomeLayoutComponent} from './home-layout/home-layout.component';
@@ -39,6 +42,14 @@ const routes: Routes = [
 		    {
 		      path: 'contact',
 		      component: ContactComponent
+		    },
+		    {
+		      path: 'edit/:id',
+		      component: EditcontactComponent
+		    },
+		    {
+		      path: 'contactlist',
+		      component: ContactlistComponent
 		    }
 
 	      ]
